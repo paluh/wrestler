@@ -23,10 +23,13 @@ class Application(object):
     Response = Response
     # list of tuples [(header, value), ...]
     extra_headers = []
+    url_map = None
 
-    def __init__(self, url_map, extra_headers):
-        self.url_map = url_map
-        self.extra_headers = extra_headers
+    def __init__(self, url_map=None, extra_headers=None):
+        self.url_map = url_map or self.url_map
+        if not self.url_map:
+            raise ValueError('You have to pass or define url_map value')
+        self.extra_headers = extra_headers or self.extra_headers
 
     def __call__(self, environ, start_response):
         def _start_response(c, headers):
