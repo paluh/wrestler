@@ -27,5 +27,6 @@ setup(
     url='https://github.com/paluh/wrestler',
     packages=['wrestler'],
     zip_safe=False,
+    test_suite='wrestler.tests.test_suite',
     version = '0.0.1',
 )
