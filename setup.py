@@ -15,6 +15,7 @@ CLASSIFIERS = [
 
 REQUIREMENTS = [
     'itsdangerous',
+    'simplejson',
     'werkzeug',
 ]
 setup(

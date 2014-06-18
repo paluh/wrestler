@@ -5,6 +5,7 @@ from werkzeug.datastructures import MultiDict
 import werkzeug.routing
 from werkzeug.urls import url_quote
 
+from .application import Application
 
 _missing = object()
 
@@ -105,3 +106,10 @@ class Map(werkzeug.routing.Map):
                          dispatcher.subdomain, dispatcher.url_scheme,
                          dispatcher.default_method, dispatcher.path_info,
                          dispatcher.query_args)
+
+
+class Application(Application):
+
+    extra_headers = [('Cache-Control', 'no-cache, no-store, must-revalidate'),
+                     ('Access-Control-Allow-Origin', '*'),
+                     ('Pragma', 'no-cache'), ('Expires', '0')]
