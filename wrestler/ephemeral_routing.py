@@ -113,3 +113,11 @@ class Application(Application):
     extra_headers = [('Cache-Control', 'no-cache, no-store, must-revalidate'),
                      ('Access-Control-Allow-Origin', '*'),
                      ('Pragma', 'no-cache'), ('Expires', '0')]
+
+    urls = None
+
+    def __init__(self, secret, signature_max_age, extra_headers=None):
+        assert self.urls is not None, ('You have to define urls list on class '
+                                       'level')
+        url_map = Map(secret, signature_max_age, self.urls)
+        super(Application, self).__init__(url_map, extra_headers)
