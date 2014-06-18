@@ -1,4 +1,4 @@
-wRESTler
+wRESTler [![Build Status](https://travis-ci.org/paluh/wrestler.png?branch=master)](https://travis-ci.org/paluh/wrestler) [![Coverage Status](https://coveralls.io/repos/paluh/wrestler/badge.png?branch=master)](https://coveralls.io/r/paluh/wrestler?branch=master)
 ========
 
 Set of utilities for werkzeug REST services.
