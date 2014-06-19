@@ -6,6 +6,7 @@ import werkzeug.routing
 from werkzeug.urls import url_quote
 
 from .application import Application
+from .client import Client
 
 _missing = object()
 
@@ -121,3 +122,10 @@ class Application(Application):
                                        'level')
         url_map = Map(secret, signature_max_age, self.urls)
         super(Application, self).__init__(url_map, extra_headers)
+
+
+class Client(Client):
+
+    def __init__(self, secret, urls, *args, **kwargs):
+        url_map = Map(secret, 10, self.urls)
+        super(Client, self).__init__(url_map, *args, **kwargs)
