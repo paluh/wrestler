@@ -51,7 +51,7 @@ class Application(object):
     def _serve(self, view, request, args):
         if isinstance(view, basestring):
             view_name = 'serve_%s' % view.replace('-', '_')
-            if not hasattr(self, view_name):
+            if hasattr(self, view_name):
                 view_method = getattr(self, view_name)
                 return view_method(request, **args)
             else:
