@@ -30,5 +30,5 @@ setup(
     packages=['wrestler'],
     zip_safe=False,
     test_suite='wrestler.tests.test_suite',
-    version = '0.0.2',
+    version = '0.0.3',
 )

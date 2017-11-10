@@ -42,10 +42,9 @@ class Application(object):
         request = self.Request(environ)
         try:
             view, args = url_dispatcher.match(request.path)
+            response = self._serve(view, request, args)
         except HTTPException, e:
             response = e
-        else:
-            response = self._serve(view, request, args)
         return response(environ, _start_response)
 
     def _serve(self, view, request, args):
