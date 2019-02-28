@@ -16,3 +16,4 @@ This approach can be useful if you don't want to reveal authentication credentia
 To run project test suite (`wrestler.tests.test_suite`) just type:
 
     $ python setup.py test
+
