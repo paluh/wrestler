@@ -1,9 +1,10 @@
+from __future__ import absolute_import
 import time
 import itsdangerous
 import unittest
 import werkzeug
 
-from .ephemeral_routing import Map
+from wrestler.ephemeral_routing import Map
 
 
 class MapTestCase(unittest.TestCase):

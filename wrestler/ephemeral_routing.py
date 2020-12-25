@@ -29,7 +29,7 @@ class MapAdapter(werkzeug.routing.MapAdapter):
         rv = self._partial_build(endpoint, values, method, append_unknown)
         if rv is None:
             raise werkzeug.routing.BuildError(endpoint, values, method)
-        domain_part, path = rv
+        domain_part, path, _ = rv
 
         host = self.get_host(domain_part)
 
